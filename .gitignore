@@ -16,3 +16,4 @@ buildNumber.properties
 **/mvnw.cmd
 **/.gitignore
 .idea/
+kd-mall.iml
