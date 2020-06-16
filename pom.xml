@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.my.kd-mall</groupId>
+    <groupId>cn.my.kdmall</groupId>
     <artifactId>kd-mall</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>kd-mall</name>
@@ -11,12 +11,14 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>kd-mall-common</module>
         <module>kd-mall-product</module>
         <module>kd-mall-member</module>
         <module>kd-mall-order</module>
         <module>kd-mall-coupon</module>
         <module>kd-mall-ware</module>
+        <module>kd-mall-gateway</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
     </modules>
-
-
 </project>

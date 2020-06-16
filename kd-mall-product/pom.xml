@@ -8,10 +8,10 @@
         <version>2.3.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>cn.my.kd-mall</groupId>
-    <artifactId>kd-mall-prodect</artifactId>
+    <groupId>cn.my.kdmall</groupId>
+    <artifactId>kd-mall-product</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>kd-mall-prodect</name>
+    <name>kd-mall-product</name>
     <description>科大商铺-商品服务</description>
 
     <properties>
@@ -20,6 +20,12 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>cn.my.kdmall</groupId>
+            <artifactId>kd-mall-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
