@@ -21,3 +21,4 @@ mybatis-plus:
 logging:
   level:
     cn.my.kdmall: debug
+

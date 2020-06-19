@@ -18,6 +18,7 @@
         <module>kd-mall-coupon</module>
         <module>kd-mall-ware</module>
         <module>kd-mall-gateway</module>
+        <module>kd-mall-third-party</module>
         <module>renren-fast</module>
         <module>renren-generator</module>
     </modules>

@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI4GC7gYwDSfx8KzR3RGb1
+      secret-key: QIWS10uuhB2JJvtJvTLNT3OmiwZ5lR
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+  application:
+    name: kd-mall-third-party
+server:
+  port: 3000
