@@ -2,6 +2,8 @@ package cn.my.kdmall.product.service.impl;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collector;
@@ -54,6 +56,24 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
     public void removeCategoryByIds(List<Long> asList) {
 
         baseMapper.deleteBatchIds(asList);
+    }
+
+    @Override
+    public Long[] getCatelogIds(Long catelogId) {
+        List<Long> paths = new ArrayList<>();
+        List<Long> parents = findCatelogPid(catelogId, paths);
+        Collections.reverse(parents);
+        return (Long[]) parents.toArray(new Long[parents.size()]);
+    }
+
+    private List<Long> findCatelogPid(Long catelogId, List<Long> paths) {
+        //收集当前节点id
+        paths.add(catelogId);
+        CategoryEntity byId = this.getById(catelogId);
+        if(byId.getParentCid() != 0) {
+            findCatelogPid(byId.getParentCid(), paths);
+        }
+        return paths;
     }
 
     private List<CategoryEntity> getChildrenCategory(CategoryEntity root, List<CategoryEntity> all) {

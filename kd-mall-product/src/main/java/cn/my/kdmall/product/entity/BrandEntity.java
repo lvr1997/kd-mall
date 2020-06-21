@@ -1,7 +1,9 @@
 package cn.my.kdmall.product.entity;
 
 import cn.my.kdmall.common.valid.AddGroup;
+import cn.my.kdmall.common.valid.MyValid;
 import cn.my.kdmall.common.valid.UpdateGroup;
+import cn.my.kdmall.common.valid.UpdateStatusGroup;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
@@ -49,12 +51,14 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 显示状态[0-不显示；1-显示]
 	 */
+	@NotNull(groups = {AddGroup.class, UpdateStatusGroup.class})
+	@MyValid(vals = {0, 1}, groups = {AddGroup.class, UpdateStatusGroup.class})
 	private Integer showStatus;
 	/**
 	 * 检索首字母
 	 */
 	@NotEmpty(message = "检索首字母不能为空", groups = {AddGroup.class})
-	@Pattern(regexp = "/^[a-zA-Z]$/", message = "检索首字母必须是A-Z单个字母", groups = {AddGroup.class, UpdateGroup.class})
+	@Pattern(regexp = "^[a-zA-Z]$", message = "检索首字母必须是A-Z单个字母", groups = {AddGroup.class, UpdateGroup.class})
 	private String firstLetter;
 	/**
 	 * 排序
